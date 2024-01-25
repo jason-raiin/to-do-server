@@ -3,7 +3,7 @@ const app = express();
 const ParseServer = require('parse-server').ParseServer;
 
 const server = new ParseServer({
-  databaseURI: 'mongodb://localhost:27017/todo', // Connection string for your MongoDB database
+  databaseURI: 'mongodb+srv://jason:8VCFQnEJadgDjQ83@testdbcluster.zrjjrx1.mongodb.net/?retryWrites=true&w=majority', // Connection string for your MongoDB database
   appId: 'todo',
   masterKey: 'supersecret', // Keep this key secret!
   serverURL: 'http://localhost:1337/parse' // Don't forget to change to https if needed
