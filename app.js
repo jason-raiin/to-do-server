@@ -4,6 +4,8 @@ const ParseServer = require('parse-server').ParseServer;
 require('dotenv').config();
 const PORT = process.env.PORT;
 
+console.log(process.env)
+
 const server = new ParseServer({
   databaseURI: process.env.DATABASE_URI, // Connection string for your MongoDB database
   appId: process.env.APP_ID,
