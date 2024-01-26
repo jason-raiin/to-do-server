@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const ParseServer = require('parse-server').ParseServer;
+require('dotenv').config();
+const PORT = process.env.PORT;
 
 const server = new ParseServer({
-  databaseURI: 'mongodb+srv://jason:8VCFQnEJadgDjQ83@testdbcluster.zrjjrx1.mongodb.net/?retryWrites=true&w=majority', // Connection string for your MongoDB database
-  appId: 'todo',
-  masterKey: 'supersecret', // Keep this key secret!
-  serverURL: 'http://localhost:80/parse' // Don't forget to change to https if needed
+  databaseURI: process.env.DATABASE_URI, // Connection string for your MongoDB database
+  appId: process.env.APP_ID,
+  masterKey: process.env.MASTER_KEY, // Keep this key secret!
+  serverURL: `http://localhost:${PORT}/parse` // Don't forget to change to https if needed
 });
 
 // Start server
@@ -15,8 +17,8 @@ server.start();
 // Serve the Parse API on the /parse URL prefix
 app.use('/parse', server.app);
 
-app.listen(80, function() {
-  console.log('Parse server running on port 80.');
+app.listen(PORT, function() {
+  console.log(`Parse server running on port ${PORT}.`);
 });
 
 module.exports = app;
