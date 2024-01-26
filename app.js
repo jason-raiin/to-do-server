@@ -6,7 +6,7 @@ const server = new ParseServer({
   databaseURI: 'mongodb+srv://jason:8VCFQnEJadgDjQ83@testdbcluster.zrjjrx1.mongodb.net/?retryWrites=true&w=majority', // Connection string for your MongoDB database
   appId: 'todo',
   masterKey: 'supersecret', // Keep this key secret!
-  serverURL: 'http://localhost:8080/parse' // Don't forget to change to https if needed
+  serverURL: 'http://localhost:80/parse' // Don't forget to change to https if needed
 });
 
 // Start server
@@ -15,8 +15,8 @@ server.start();
 // Serve the Parse API on the /parse URL prefix
 app.use('/parse', server.app);
 
-app.listen(1337, function() {
-  console.log('Parse server running on port 8080.');
+app.listen(80, function() {
+  console.log('Parse server running on port 80.');
 });
 
 module.exports = app;
