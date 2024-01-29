@@ -58,7 +58,7 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::851725309143:role/GitHubOIDCApp
+        role-to-assume: arn:aws:iam::851725309143:role/GitHubOIDCServer
         role-session-name: to-do-list-deploy
         aws-region: ${{ env.AWS_REGION }}
 
