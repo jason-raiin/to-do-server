@@ -59,7 +59,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::851725309143:role/GitHubOIDCServer
-        role-session-name: to-do-list-deploy
+        role-session-name: to-do-server-deploy
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Login to Amazon ECR
